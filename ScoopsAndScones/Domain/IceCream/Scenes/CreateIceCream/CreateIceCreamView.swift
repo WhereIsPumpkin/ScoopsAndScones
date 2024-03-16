@@ -73,6 +73,7 @@ struct CreateIceCreamView: View {
     NavigationView {
       Form {
         Section {
+          
           Picker("Select a cone or cup", selection: $selectedCone) {
             ForEach(iceCream.displayedCones, id: \.self) {
               Text($0)
@@ -140,5 +141,5 @@ struct CreateIceCreamView: View {
 }
 
 #Preview {
-  CreateIceCreamView(iceCream: IceCreamDataStore())
+  CreateIceCreamView().configureView()
 }

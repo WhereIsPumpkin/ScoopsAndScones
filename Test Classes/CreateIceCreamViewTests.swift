@@ -46,10 +46,28 @@ class CreateIceCreamViewTests: XCTestCase {
   }
 
   // MARK: - Test doubles
-  class CreateIceCreamInteractorSpy: CreateIceCreamBusinessLogic {}
+  class CreateIceCreamInteractorSpy: CreateIceCreamBusinessLogic {
+    var loadIceCreamCalled = false
+
+    func loadIceCream(request: CreateIceCream.LoadIceCream.Request) {
+      loadIceCreamCalled = true
+    }
+  }
+
 
   // MARK: - Tests
-
+  func testShouldLoadIceCreamOnViewAppear() {
+    // Given
+    sut.interactor = interactorSpy
+    // When
+    sut.fetchIceCream()
+    // Then
+    XCTAssertTrue(
+      interactorSpy.loadIceCreamCalled,
+      "fetchIceCream() should ask the interactor to load the ice cream"
+    )
+  }
+  
   override func tearDownWithError() throws {
     sut = nil
     interactorSpy = nil
