@@ -156,9 +156,9 @@
 				EA42A080272EEC5800A82D0A /* Extensions */,
 				EAD54C9C272B8B0B00E1661A /* UI Components */,
 				EA9C6494271B0CE2000AD66F /* CreateIceCreamView.swift */,
-				75604E5D2BA60C2F008EDCA9 /* CreateIcreCreamModel.swift */,
 				75604E5F2BA60FD1008EDCA9 /* CreateIceCreamInteractor.swift */,
 				75604E612BA6118E008EDCA9 /* CreateIceCreamPresenter.swift */,
+				75604E5D2BA60C2F008EDCA9 /* CreateIcreCreamModel.swift */,
 			);
 			path = CreateIceCream;
 			sourceTree = "<group>";

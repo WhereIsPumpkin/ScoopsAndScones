@@ -32,10 +32,21 @@
 
 import SwiftUI
 
-extension CreateIceCreamView {
+protocol CreateIceCreamDisplayLogic {
+  func displayIceCream(viewModel: CreateIceCream.LoadIceCream.ViewModel)
+}
+
+extension CreateIceCreamView: CreateIceCreamDisplayLogic {
+  
   func fetchIceCream() {
-    let request = CreateIcreCream.LoadIceCream.Request()
+    let request = CreateIceCream.LoadIceCream.Request()
     interactor?.loadIceCream(request: request)
+  }
+  
+  func displayIceCream(viewModel: CreateIceCream.LoadIceCream.ViewModel) {
+    iceCream.displayedCones = viewModel.cones
+    iceCream.displayedFlavors = viewModel.flavors
+    iceCream.displayedToppings = viewModel.toppings
   }
   
   // HELPER VIEW FUNCTION
