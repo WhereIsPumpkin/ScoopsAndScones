@@ -119,6 +119,10 @@ struct CreateIceCreamView: View {
         }
       }
       .navigationTitle("Scoops&Scones")
+      .onAppear {
+        fetchIceCream()
+      }
+      
     }
     .navigationViewStyle(.stack)
   }
