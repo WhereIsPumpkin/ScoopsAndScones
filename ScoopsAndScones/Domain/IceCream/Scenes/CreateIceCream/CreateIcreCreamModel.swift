@@ -32,7 +32,7 @@
 
 import Foundation
 
-enum CreateIcreCream {
+enum CreateIceCream {
   enum LoadIceCream {
     struct Request {}
     
